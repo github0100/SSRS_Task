@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <FullPath>Debug</FullPath>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2016</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Sales</TargetReportFolder>
+    <TargetDatasetFolder>Data Sets Folder</TargetDatasetFolder>
+    <TargetDatasourceFolder>Data Source Folder</TargetDatasourceFolder>
+    <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
+    <TargetServerURL>http://kanchapc/ReportServer</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
+    <FullPath>DebugLocal</FullPath>
+    <OutputPath>bin\DebugLocal</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2016</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Customer_SalesReport</TargetReportFolder>
+    <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
+    <TargetServerURL>http://localhost/reportserver</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <FullPath>Release</FullPath>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2016</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Customer_SalesReport</TargetReportFolder>
+    <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
+    <TargetServerURL>http://localhost/reportserver</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup>
+    <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+    <DataSources>@(DataSource)</DataSources>
+    <DataSets>@(DataSet)</DataSets>
+    <Reports>@(Report)</Reports>
+  </PropertyGroup>
+  <ItemGroup>
+    <DataSource Include="SDSphonebook.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="Add Two Dataset.rdl" />
+    <Report Include="AllowNull_SingleValueParameter.rdl" />
+    <Report Include="BarChart.rdl" />
+    <Report Include="BookMark URL.rdl" />
+    <Report Include="Calender Parameter.rdl" />
+    <Report Include="CaseCade.rdl" />
+    <Report Include="Ceiling.rdl" />
+    <Report Include="Change Chrt Data Level Position.rdl" />
+    <Report Include="Change Color Per Group.rdl" />
+    <Report Include="Change Color Per Region.rdl" />
+    <Report Include="Change Color.rdl" />
+    <Report Include="Column Chart Color Min And Max.rdl" />
+    <Report Include="Column Chart.rdl" />
+    <Report Include="CountrySummaryReport.rdl" />
+    <Report Include="Customer_2020.rdl" />
+    <Report Include="Details Report_Sales.rdl" />
+    <Report Include="Display All Row In One Rows.rdl" />
+    <Report Include="Display Report Name.rdl" />
+    <Report Include="Employee.rdl" />
+    <Report Include="Emptype By Region.rdl" />
+    <Report Include="Excel Source Report.rdl" />
+    <Report Include="Export to excel with Name sheet to group valus automatically.rdl" />
+    <Report Include="Formatt Text Differently.rdl" />
+    <Report Include="Hide Some Column With Prameter.rdl" />
+    <Report Include="HideRow_Report.rdl" />
+    <Report Include="Indecator.rdl" />
+    <Report Include="List Report.rdl" />
+    <Report Include="Master_Report.rdl" />
+    <Report Include="Matric Antractive Shorting.rdl" />
+    <Report Include="Matrix Date Filtrer.rdl" />
+    <Report Include="Matrix Report.rdl" />
+    <Report Include="MultiDrillDown.rdl" />
+    <Report Include="Multiple Paramerer.rdl" />
+    <Report Include="Newsletter Dash Report.rdl" />
+    <Report Include="Null On MultiPle Parameter.rdl" />
+    <Report Include="Page Crouping By Region.rdl" />
+    <Report Include="Page Number On Fooder and Header.rdl" />
+    <Report Include="Paramenter With Query Values.rdl" />
+    <Report Include="Parameter Optional.rdl" />
+    <Report Include="Parameter With Query Case Statement.rdl" />
+    <Report Include="PhoneBook Report.rdl" />
+    <Report Include="PhonebookSalesRegion.rdl" />
+    <Report Include="Pie Chart.rdl" />
+    <Report Include="Radio Botton.rdl" />
+    <Report Include="Running Total By Group.rdl" />
+    <Report Include="Running Total.rdl" />
+    <Report Include="Show Images Depend On ProductName.rdl" />
+    <Report Include="Show Report Parameter on Top.rdl" />
+    <Report Include="Single Value Parameter with spcify Value.rdl" />
+    <Report Include="StackBar Chart.rdl" />
+    <Report Include="Sub_Details.rdl" />
+    <Report Include="SummaryReport.rdl" />
+    <Report Include="WildCard.rdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
+</Project>

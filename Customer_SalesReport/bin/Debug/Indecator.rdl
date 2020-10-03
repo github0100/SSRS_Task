@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>10</AutoRefresh>
+  <DataSources>
+    <DataSource Name="SalesCustomerDS">
+      <DataSourceReference>TestDb</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>2ffbfcea-c36f-4794-b2b8-e16abda62365</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Dset_SalesCustomer">
+      <Query>
+        <DataSourceName>SalesCustomerDS</DataSourceName>
+        <CommandText>select * from totalsale</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SalePersonFName">
+          <DataField>SalePersonFName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SalePersonLName">
+          <DataField>SalePersonLName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProductName">
+          <DataField>ProductName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemsSold">
+          <DataField>ItemsSold</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SoldPrice">
+          <DataField>SoldPrice</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="SoldDate">
+          <DataField>SoldDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="State">
+          <DataField>State</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Country">
+          <DataField>Country</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Region">
+          <DataField>Region</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsActive">
+          <DataField>IsActive</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.20833in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.36806in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.33333in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.66667in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.71528in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.72917in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.45833in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Country</Value>
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Yellow",
+Second(Now)&gt;40,"Blue",
+Second(Now)&gt;30,"Red",
+Second(Now)&gt;20,"Pink",
+Second(Now)&gt;10,"Green")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Sale Person FName</Value>
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Yellow",
+Second(Now)&gt;40,"Blue",
+Second(Now)&gt;30,"Red",
+Second(Now)&gt;20,"Pink",
+Second(Now)&gt;10,"Green")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox7">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Product Name</Value>
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Yellow",
+Second(Now)&gt;40,"Blue",
+Second(Now)&gt;30,"Red",
+Second(Now)&gt;20,"Pink",
+Second(Now)&gt;10,"Green")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Items Sold</Value>
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Yellow",
+Second(Now)&gt;40,"Blue",
+Second(Now)&gt;30,"Red",
+Second(Now)&gt;20,"Pink",
+Second(Now)&gt;10,"Green")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Yellow",
+Second(Now)&gt;40,"Blue",
+Second(Now)&gt;30,"Red",
+Second(Now)&gt;20,"Pink",
+Second(Now)&gt;10,"Green")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Yellow",
+Second(Now)&gt;40,"Blue",
+Second(Now)&gt;30,"Red",
+Second(Now)&gt;20,"Pink",
+Second(Now)&gt;10,"Green")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox19">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox19</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Yellow",
+Second(Now)&gt;40,"Blue",
+Second(Now)&gt;30,"Red",
+Second(Now)&gt;20,"Pink",
+Second(Now)&gt;10,"Green")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Country">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Country.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Country</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Pink",
+Second(Now)&gt;40,"Red",
+Second(Now)&gt;30,"Blue",
+Second(Now)&gt;20,"Green",
+Second(Now)&gt;10,"Yellow")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SalePersonFName">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!SalePersonFName.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>SalePersonFName</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Pink",
+Second(Now)&gt;40,"Red",
+Second(Now)&gt;30,"Blue",
+Second(Now)&gt;20,"Green",
+Second(Now)&gt;10,"Yellow")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ProductName">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ProductName.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ProductName</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Pink",
+Second(Now)&gt;40,"Red",
+Second(Now)&gt;30,"Blue",
+Second(Now)&gt;20,"Green",
+Second(Now)&gt;10,"Yellow")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ItemsSold">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ItemsSold.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ItemsSold</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Pink",
+Second(Now)&gt;40,"Red",
+Second(Now)&gt;30,"Blue",
+Second(Now)&gt;20,"Green",
+Second(Now)&gt;10,"Yellow")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <GaugePanel Name="GaugePanel2">
+                          <StateIndicators>
+                            <StateIndicator Name="Indicator1">
+                              <GaugeInputValue>
+                                <Value>=Fields!ItemsSold.Value/sum(Fields!ItemsSold.Value,"Region")*100</Value>
+                                <Multiplier>1</Multiplier>
+                                <DataElementOutput>NoOutput</DataElementOutput>
+                              </GaugeInputValue>
+                              <TransformationType>None</TransformationType>
+                              <TransformationScope>Tablix1</TransformationScope>
+                              <MinimumValue>
+                                <Value>NaN</Value>
+                                <Multiplier>1</Multiplier>
+                              </MinimumValue>
+                              <MaximumValue>
+                                <Value>NaN</Value>
+                                <Multiplier>1</Multiplier>
+                              </MaximumValue>
+                              <IndicatorStyle>None</IndicatorStyle>
+                              <IndicatorImage>
+                                <Source>External</Source>
+                                <Value />
+                              </IndicatorImage>
+                              <ScaleFactor>1</ScaleFactor>
+                              <IndicatorStates>
+                                <IndicatorState Name="Red">
+                                  <StartValue>
+                                    <Value>1</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </StartValue>
+                                  <EndValue>
+                                    <Value>20</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </EndValue>
+                                  <Color>Brown</Color>
+                                  <ScaleFactor>1</ScaleFactor>
+                                  <IndicatorStyle>TrafficLightUnrimmed</IndicatorStyle>
+                                  <IndicatorImage>
+                                    <Source>External</Source>
+                                    <Value />
+                                  </IndicatorImage>
+                                </IndicatorState>
+                                <IndicatorState Name="Yellow">
+                                  <StartValue>
+                                    <Value>20</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </StartValue>
+                                  <EndValue>
+                                    <Value>50</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </EndValue>
+                                  <Color>Yellow</Color>
+                                  <ScaleFactor>1</ScaleFactor>
+                                  <IndicatorStyle>TrafficLightUnrimmed</IndicatorStyle>
+                                  <IndicatorImage>
+                                    <Source>External</Source>
+                                    <Value />
+                                  </IndicatorImage>
+                                </IndicatorState>
+                                <IndicatorState Name="Green">
+                                  <StartValue>
+                                    <Value>50</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </StartValue>
+                                  <EndValue>
+                                    <Value>100</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </EndValue>
+                                  <Color>LimeGreen</Color>
+                                  <ScaleFactor>1</ScaleFactor>
+                                  <IndicatorStyle>TrafficLightUnrimmed</IndicatorStyle>
+                                  <IndicatorImage>
+                                    <Source>External</Source>
+                                    <Value />
+                                  </IndicatorImage>
+                                </IndicatorState>
+                              </IndicatorStates>
+                              <Angle>0</Angle>
+                              <StateDataElementName />
+                              <rd:IconsSet>ThreeUnrimmedTrafficLights</rd:IconsSet>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <ShadowOffset>0pt</ShadowOffset>
+                              </Style>
+                              <Top>4</Top>
+                              <Left>4</Left>
+                              <Height>92</Height>
+                              <Width>92</Width>
+                            </StateIndicator>
+                          </StateIndicators>
+                          <AutoLayout>true</AutoLayout>
+                          <BackFrame>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <BackgroundGradientType>None</BackgroundGradientType>
+                              <BackgroundGradientEndColor>Gray</BackgroundGradientEndColor>
+                              <BackgroundHatchType>None</BackgroundHatchType>
+                              <ShadowOffset>0pt</ShadowOffset>
+                            </Style>
+                            <FrameBackground>
+                              <Style>
+                                <BackgroundColor>Silver</BackgroundColor>
+                                <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                                <BackgroundGradientEndColor>Gray</BackgroundGradientEndColor>
+                                <BackgroundHatchType>None</BackgroundHatchType>
+                              </Style>
+                            </FrameBackground>
+                            <FrameImage>
+                              <Source>External</Source>
+                              <Value />
+                            </FrameImage>
+                          </BackFrame>
+                          <TopImage>
+                            <Source>External</Source>
+                            <Value />
+                          </TopImage>
+                          <DataSetName>Dset_SalesCustomer</DataSetName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Pink",
+Second(Now)&gt;40,"Red",
+Second(Now)&gt;30,"Blue",
+Second(Now)&gt;20,"Green",
+Second(Now)&gt;10,"Yellow")</BackgroundColor>
+                          </Style>
+                        </GaugePanel>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox14">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ItemsSold.Value/sum(Fields!ItemsSold.Value,"Region")*100</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Pink",
+Second(Now)&gt;40,"Red",
+Second(Now)&gt;30,"Blue",
+Second(Now)&gt;20,"Green",
+Second(Now)&gt;10,"Yellow")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <GaugePanel Name="GaugePanel3">
+                          <StateIndicators>
+                            <StateIndicator Name="Indicator1">
+                              <GaugeInputValue>
+                                <Value>=Sum(Fields!ItemsSold.Value)</Value>
+                                <Multiplier>1</Multiplier>
+                                <DataElementOutput>NoOutput</DataElementOutput>
+                              </GaugeInputValue>
+                              <TransformationType>None</TransformationType>
+                              <TransformationScope>Tablix1</TransformationScope>
+                              <MinimumValue>
+                                <Value>NaN</Value>
+                                <Multiplier>1</Multiplier>
+                              </MinimumValue>
+                              <MaximumValue>
+                                <Value>NaN</Value>
+                                <Multiplier>1</Multiplier>
+                              </MaximumValue>
+                              <IndicatorStyle>None</IndicatorStyle>
+                              <IndicatorImage>
+                                <Source>External</Source>
+                                <Value />
+                              </IndicatorImage>
+                              <ScaleFactor>1</ScaleFactor>
+                              <IndicatorStates>
+                                <IndicatorState Name="ThreeSignsDiamond">
+                                  <StartValue>
+                                    <Value>0</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </StartValue>
+                                  <EndValue>
+                                    <Value>4</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </EndValue>
+                                  <Color>Red</Color>
+                                  <ScaleFactor>1</ScaleFactor>
+                                  <IndicatorStyle>ThreeSignsDiamond</IndicatorStyle>
+                                  <IndicatorImage>
+                                    <Source>External</Source>
+                                    <Value />
+                                  </IndicatorImage>
+                                </IndicatorState>
+                                <IndicatorState Name="ThreeSignsTriangle">
+                                  <StartValue>
+                                    <Value>4</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </StartValue>
+                                  <EndValue>
+                                    <Value>7</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </EndValue>
+                                  <Color>Yellow</Color>
+                                  <ScaleFactor>1</ScaleFactor>
+                                  <IndicatorStyle>ThreeSignsTriangle</IndicatorStyle>
+                                  <IndicatorImage>
+                                    <Source>External</Source>
+                                    <Value />
+                                  </IndicatorImage>
+                                </IndicatorState>
+                                <IndicatorState Name="ThreeSignsCircle">
+                                  <StartValue>
+                                    <Value>7</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </StartValue>
+                                  <EndValue>
+                                    <Value>100</Value>
+                                    <Multiplier>1</Multiplier>
+                                  </EndValue>
+                                  <Color>LimeGreen</Color>
+                                  <ScaleFactor>1</ScaleFactor>
+                                  <IndicatorStyle>ThreeSignsCircle</IndicatorStyle>
+                                  <IndicatorImage>
+                                    <Source>External</Source>
+                                    <Value />
+                                  </IndicatorImage>
+                                </IndicatorState>
+                              </IndicatorStates>
+                              <Angle>0</Angle>
+                              <StateDataElementName />
+                              <rd:IconsSet>ThreeSigns</rd:IconsSet>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <ShadowOffset>0pt</ShadowOffset>
+                              </Style>
+                              <Top>4</Top>
+                              <Left>4</Left>
+                              <Height>92</Height>
+                              <Width>92</Width>
+                            </StateIndicator>
+                          </StateIndicators>
+                          <AutoLayout>true</AutoLayout>
+                          <BackFrame>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <BackgroundGradientType>None</BackgroundGradientType>
+                              <BackgroundGradientEndColor>Gray</BackgroundGradientEndColor>
+                              <BackgroundHatchType>None</BackgroundHatchType>
+                              <ShadowOffset>0pt</ShadowOffset>
+                            </Style>
+                            <FrameBackground>
+                              <Style>
+                                <BackgroundColor>Silver</BackgroundColor>
+                                <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                                <BackgroundGradientEndColor>Gray</BackgroundGradientEndColor>
+                                <BackgroundHatchType>None</BackgroundHatchType>
+                              </Style>
+                            </FrameBackground>
+                            <FrameImage>
+                              <Source>External</Source>
+                              <Value />
+                            </FrameImage>
+                          </BackFrame>
+                          <TopImage>
+                            <Source>External</Source>
+                            <Value />
+                          </TopImage>
+                          <DataSetName>Dset_SalesCustomer</DataSetName>
+                          <Style>
+                            <Border>
+                              <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>=Switch(Second(Now)&gt;50,"Pink",
+Second(Now)&gt;40,"Red",
+Second(Now)&gt;30,"Blue",
+Second(Now)&gt;20,"Green",
+Second(Now)&gt;10,"Yellow")</BackgroundColor>
+                          </Style>
+                        </GaugePanel>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox16">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Region</Value>
+                                <Style>
+                                  <FontStyle>Italic</FontStyle>
+                                  <FontFamily>Arial</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox16</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>=Switch(Second(Now)&gt;50,"Yellow",
+Second(Now)&gt;40,"Blue",
+Second(Now)&gt;30,"Red",
+Second(Now)&gt;20,"Pink",
+Second(Now)&gt;10,"Green")</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Region">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Region.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Region.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>1in</Size>
+                    <CellContents>
+                      <Textbox Name="Region1">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Region.Value</Value>
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Region1</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>=Switch(Second(Now)&gt;50,"Black",
+Second(Now)&gt;40,"White",
+Second(Now)&gt;30,"Aqua",
+Second(Now)&gt;20,"Purple",
+Second(Now)&gt;10,"LightGrey")</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>=Switch(Second(Now)&gt;50,"Pink",
+Second(Now)&gt;40,"Red",
+Second(Now)&gt;30,"Blue",
+Second(Now)&gt;20,"Green",
+Second(Now)&gt;10,"Yellow")</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="Details" />
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>Dset_SalesCustomer</DataSetName>
+            <Top>0.37028in</Top>
+            <Left>0.41194in</Left>
+            <Height>0.70833in</Height>
+            <Width>8.02083in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox15">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>change to number and on sumitmesold</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>put </Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Constant">=Fields!ItemsSold.Value/sum(Fields!ItemsSold.Value,"Dset_SalesCustomer")*100</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox15</rd:DefaultName>
+            <Top>1.47444in</Top>
+            <Left>1.37028in</Left>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox17">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>for group level</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>--change to number and on sumitmesold</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>put </Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Constant">=Fields!ItemsSold.Value / Sum(Fields!ItemsSold.Value, "region") * 100</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox15</rd:DefaultName>
+            <Top>1.34722in</Top>
+            <Left>3.16431in</Left>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox23">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>change color after 10 second</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Constant">=Switch(Second(Now)&gt;50,"Pink",
+Second(Now)&gt;40,"Red",
+Second(Now)&gt;30,"Blue",
+Second(Now)&gt;20,"Green",
+Second(Now)&gt;10,"Yellow")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox23</rd:DefaultName>
+            <Top>1.61333in</Top>
+            <Left>6.57861in</Left>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>9.43278in</Width>
+      <Page>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>6a29da52-0d80-4481-8638-01557075b7b7</rd:ReportID>
+</Report>
